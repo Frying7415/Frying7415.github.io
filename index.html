@@ -10,7 +10,14 @@
       // Access the Telegram.WebApp object
       const app = window.Telegram.WebApp;
 
-      app.isExpanded = true;
+      // Prevent default scrolling behavior
+      document.addEventListener('touchstart', function(e) {
+        e.preventDefault();
+      }, { passive: false });
+
+      document.addEventListener('touchmove', function(e) {
+        e.preventDefault();
+      }, { passive: false });
     });
   </script>
 </head>
