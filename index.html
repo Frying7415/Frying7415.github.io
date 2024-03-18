@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <title>Telegram Mini App</title>
+  <title>My Telegram Mini App</title>
+  <!-- Your CSS files and styles -->
+
+  <!-- Telegram Mini App script -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script>
+    // Wait for the script to load
+    window.addEventListener('load', function() {
+      // Access the Telegram.WebApp object
+      const app = window.Telegram.WebApp;
+
+      // Example usage of the WebApp object
+      console.log(app.initData);
+      console.log(app.initDataUnsafe);
+      console.log(app.version);
+      console.log(app.platform);
+      console.log(app.colorScheme);
+      console.log(app.themeParams);
+      console.log(app.isExpanded);
+
+      app.isExpanded = true;
+    });
+  </script>
 </head>
 <body>
   <!-- Your Mini App's HTML content -->
-  
-  <button id="expand-button">Expand to Full Screen</button>
-
-  <!-- Your JavaScript code -->
-  <script>
-    // Initialize Mini App
-    const app = new Telegram.WebApp("Your Mini App URL");
-
-    // Set up event listener for the expand button
-    const expandButton = document.getElementById("expand-button");
-    expandButton.addEventListener("click", () => {
-      // Expand to full screen
-      app.setFullScreen();
-    });
-  </script>
 </body>
 </html>
